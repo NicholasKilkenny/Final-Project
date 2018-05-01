@@ -11,7 +11,7 @@
 
 
 
-<title>Data</title>
+<title>Introduction</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -201,16 +201,21 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Data</h1>
+<h1 class="title toc-ignore">Introduction</h1>
 
 </div>
 
 
-<p>The Data source is from all years of baseball as a part of the Lamhman Database which records all baseball related information. The awards section was pulled out of this database and extends back to 1884 for some awards. I plan on looking at the distribution of award winners by position. This specific test is look at the proportion of players in each group and how they compare. There is the possibility of breaking it down further by position using this data set, but currently the question of interest is comparing the pitcher vs field of award winning. To first look at the data a break down of the information by frequency (or number of wards) won by each position. The positions were numerically coded as follows Pitcher 1, Catcher 2, 1B 3, 2B 4, 3B 5, SS 6, LF 7, CF 8, RF 9, OF 10, DH 11. The OF is considered a separate category for awards and was coded as its own variable. The tests run were a basic histogram to present a distribution of the data, a chi square to see if there is a goodness of fit with the presented data, and also a Kruskal-Wallis test as the interplay between award position and league is under consideration.</p>
-<pre class="r"><code>hist(Position)</code></pre>
-<p><img src="Data_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>This plot shows the frequency of awards won by position.</p>
-<p>More Data is available under Results</p>
+<p>The first analysis done is a chi square to look at whether the data was truly a good fit and there was a relationship when comparing the pitchers to the other postions. When comparing these two the following results occurred. Pearson’s Chi-squared test with Yates’ continuity correction</p>
+<p>data: table(Pitcher, Field) X-squared = 4754.6, df = 1, p-value &lt; 2.2e-16</p>
+<p>This chi squared test shows that there is a significant relationship between the two at a very small p value. This does not however inform the finding of more than if these two findings should be considered independently. Along with this a Kruskal-Wallis test was performed as there are potentially other variables involved such as league and award to see if there is a significant finding when considering these variables. kruskal.test(awardID,Position,lgID)</p>
+<pre><code>Kruskal-Wallis rank sum test</code></pre>
+<p>data: awardID and Position Kruskal-Wallis chi-squared = 586.23, df = 10, p-value &lt; 2.2e-16 Running a Kruskal-Wallis test as there are cateogorical variables preventing a parametric Anova analysis also reveals that there is a significant interaction between the relationship of winning an award and position along with league.</p>
+<p>To test that there is not a confounding factor such as fielder relationship they are removed and the same analysis is run with just pitchers to determine significance.</p>
+<p>kruskal.test(awardID,Pitcher,lgID)</p>
+<pre><code>Kruskal-Wallis rank sum test</code></pre>
+<p>data: awardID and Pitcher Kruskal-Wallis chi-squared = 69.329, df = 1, p-value &lt; 2.2e-16</p>
+<p>The p-value still remains significant, though the overall value of the chi-squared decreases indicating this group is not quite as distinct as when considering all of the factors tog-ether suggesting there may be a confounding variable. It is possible that in these analysis there is also the issue of the changing of award voting and weighting over the years. In addition there is consideration for pitchers in the NL winning awards vs. the AL as the AL removes hitting as a factor for pitcher and used a DH instead adding a position not eligible for awards in the NL.</p>
 
 
 

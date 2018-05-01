@@ -11,4 +11,4 @@ hist(Position)
 
 This plot shows the frequency of awards won by position.
 
-More Data is avaiable under Results
+More Data is available under Results
