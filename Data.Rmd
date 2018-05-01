@@ -1,0 +1,14 @@
+---
+title: "Data"
+---
+
+The Data source is from all years of baseball as a part of the Lamhman Database which records all baseball related information.  The awards section was pulled out of this database and extends back to 1884 for some awards. I plan on looking at the distribution of award winners by position. This specific test is look at the proportion of players in each group and how they compare. There is the possibility of breaking it down further by position using this data set, but currently the question of interest is comparing the pitcher vs field of award winning. To first look at the data a break down of the information by frequency (or number of wards) won by each position. The positions were numerically coded as follows Pitcher 1, Catcher 2, 1B 3, 2B 4, 3B 5, SS 6, LF 7, CF 8, RF 9, OF 10, DH 11. The OF is considered a separate category for awards and was coded as its own variable.  The tests run were a basic histogram to present a distribution of the data, a chi square to see if there is a goodness of fit with the presented data, and also a Kruskal-Wallis test as the interplay between award position and league is under consideration.
+
+
+```{r}
+hist(Position)
+```
+
+This plot shows the frequency of awards won by position.
+
+More Data is avaiable under Results
