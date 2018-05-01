@@ -1,0 +1,5 @@
+---
+title: "Discussion"
+---
+
+These analyses show that there is a significant relationship between the variables and their distribution, though any tests to tease out a specific finding comparing this was not found to be successful.  This data was not able to be used with parametric tests limiting some of the analyses as there are categorical variables that are unable to be run using something such as a T-test. In addition, due to the data also being assigned by position a rank sum test using a Mann Whitney U was unable to run outside of including just position altogether limiting the analysis.  Further analyses of this data would potentially benefit from splitting the leagues during analysis, though players cross league for contracts so this may not be as pertinent.
