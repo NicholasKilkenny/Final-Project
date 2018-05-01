@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Results"
 ---
 
 The first analysis done is a chi square to look at whether the data was truly a good fit and there was a relationship when comparing the pitchers to the other postions. When comparing these two the following results occurred. 
